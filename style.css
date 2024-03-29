@@ -1,0 +1,230 @@
+/* ========== font =========== */
+/* @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"); */
+
+@font-face {
+  font-family: "muli";
+  src: url("./assets/font/muli-webfont.woff2") format("woff2"),
+    url("./assets/font/muli-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "muli";
+  src: url("./assets/font/muli-bold-webfont.woff2") format("woff2"),
+    url("./assets/font/muli-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =================== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html {
+  font-size: 62.5%;
+}
+:root {
+  --primary-color: #7d7987;
+  --secondary-color: white;
+  --btn-color: #458ff6;
+}
+body {
+  font-family: "muli";
+  font-style: normal;
+}
+/* ****************   custon design **************** */
+.section-header {
+  color: #000;
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+.section-pera {
+  color: #707987;
+  font-weight: 300;
+}
+/* ****************   custon design **************** */
+/* ****************  button  **************** */
+.section-btn {
+  font-family: "muli";
+  background: #458ff6;
+  border-radius: 55px;
+  border: none;
+  color: #fff;
+  flex-shrink: 0;
+  font-weight: 700;
+  padding: 20px 40px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 6px rgba(69, 143, 246, 0.5);
+}
+.section-btn:active {
+  background-color: #588bd3;
+  box-shadow: 0 5px #78a4e2;
+  transform: translateY(3px);
+}
+.section-btn:hover {
+  background-color: rgba(69, 143, 246, 0.8);
+}
+/* ****************  button  **************** */
+/* ****************  navBar  **************** */
+.container {
+  margin: 0 80px;
+  max-width: 1360px;
+}
+.navBar {
+  background-color: #fff;
+  /* background-color: greenyellow; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  padding: 30px 0;
+  position: relative;
+}
+.menu {
+  display: flex;
+}
+.menu li {
+  padding-left: 30px;
+}
+.menu li a {
+  font-size: 1.8rem;
+  display: inline-block;
+  text-decoration: none;
+  color: var(--primary-color);
+  text-align: center;
+  transition: 0.15s ease-in-out;
+  position: relative;
+}
+.menu li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1f1534;
+  transition: 0.4s ease-in-out;
+}
+.menu li a:hover,
+.menu li a:hover::after {
+  font-weight: 700;
+  width: 100%;
+  color: #1f1534;
+}
+.close-menu,
+.open-menu {
+  position: absolute;
+  /* color: var(--primary-color); */
+  cursor: pointer;
+  font-size: 2.4rem;
+  /* display: none; */
+}
+.open-menu {
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+.close-menu {
+  top: 20px;
+  right: 20px;
+}
+#check {
+  display: none;
+}
+/* ****************  navBar  **************** */
+/* =============
+  hero section Start
+================*/
+.wrapper{
+  background-image:url(./assets/image/element.svg) ;
+  background-repeat: no-repeat;
+  background-position: 0 110px;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+}
+.dis-flex{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.header-title {
+  font-size: 4.8rem;
+}
+.header-pera {
+  font-size: 1.6rem;
+  /* margin: 25px 0 45px; */
+}
+.header-btn {
+  font-size: 1.8rem;
+}
+.header-img{
+  width: 600px;
+  flex-shrink: 0;
+}
+.header-img img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ****************  Responsive design  **************** */
+@media screen and (max-width: 640px) {
+  .container{
+    margin: 0 5px;
+  }
+  .header-container{
+    flex-direction: column-reverse;
+    align-items: baseline;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .header-title{
+    font-size: 3.8rem;
+  }
+  .header-pera{
+    text-align: justify;
+  }
+  .menu{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f3f3;
+    width: 80%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: all 0.4s ease-in-out;
+    z-index: 100;
+  }
+  .menu li{
+    margin-top: 40px;
+  }
+  .menu li a{
+    padding: 10px;
+  }
+  .close-menu,.close-menu{
+    display: block;
+  }
+  #check:checked ~ .menu{
+    right: 0;
+  }
+  .header-img img{
+    width: 60%;
+    margin: 0 15px;
+  }
+  .header-btn{
+    width: 55%;
+    padding: 8px 10px;
+    border-radius: 25px;
+  }
+}
